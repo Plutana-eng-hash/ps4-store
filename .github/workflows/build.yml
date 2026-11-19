@@ -56,7 +56,7 @@ jobs:
           fi
 
       - name: Host tests (feed parser)
-        run: ./tests/run_host_tests.sh
+        run: bash tests/run_host_tests.sh
 
       - name: Check toolchain has the libraries this app links
         run: |

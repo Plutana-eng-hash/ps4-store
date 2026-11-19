@@ -1,0 +1,5 @@
+[
+  {"name":"Example Racer","title_id":"CUSA00001","version":"01.02","region":"USA","size":"12.5 GB","pkg":"https://example.com/files/Example%20Racer.pkg","icon":"https://example.com/i.png"},
+  {"title":"Café Quest ™","id":"CUSA00002","url":"https://example.com/dl?id=2.pkg","size":4831838208},
+  {"Name":"No Link Here","icon":"https://example.com/x.png"}
+]

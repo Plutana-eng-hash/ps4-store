@@ -1,0 +1,2 @@
+{"DATA":{"https://host/one.pkg":{"name":"One","region":"EUR","version":"1.00","size":1073741824,"cover_url":"https://host/c1.png"},
+         "https://host/two.pkg":{"name":"Two","region":"USA","version":"1.01","size":2147483648}}}

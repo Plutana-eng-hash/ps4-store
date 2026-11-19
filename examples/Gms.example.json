@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Example Game",
+    "title_id": "CUSA00000",
+    "version": "01.00",
+    "region": "USA",
+    "size": "4.2 GB",
+    "pkg": "https://example.com/files/ExampleGame.pkg"
+  }
+]

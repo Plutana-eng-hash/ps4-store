@@ -1,0 +1,5 @@
+{"store":"Demo","url":"https://example.com","games":[
+  {"name":"Alpha","download_url":"https://host/a.pkg","screenshots":["https://host/s1.jpg"]},
+  {"name":"Beta","downloads":[{"label":"Base","url":"https://host/b.pkg"}]},
+  {"name":"Gamma","pkg_url":"relative/g.pkg"}
+]}

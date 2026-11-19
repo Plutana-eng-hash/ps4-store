@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <stdint.h>
 #include <string.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -23,17 +24,21 @@ typedef struct {
   int type, req_id, priority, msg_id, target_id, user_id, unk1, unk2, app_id, error_num, unk3;
   char use_icon_image_uri; char message[1024]; char icon_uri[1024]; char unk[1024];
 } notify_t;
-extern int sceKernelSendNotificationRequest(int, void *, size_t, int);
 
 static void notify(const char *fmt, ...) {
   notify_t n; memset(&n, 0, sizeof(n));
   n.type = 0; n.use_icon_image_uri = 1; n.user_id = -1;
   va_list ap; va_start(ap, fmt); vsnprintf(n.message, sizeof(n.message), fmt, ap); va_end(ap);
   strcpy(n.icon_uri, "cxml://psnotification/tex_icon_system");
-  sceKernelSendNotificationRequest(0, &n, sizeof(n), 0);
+  sceKernelSendNotificationRequest(0, (OrbisNotificationRequest *)&n, sizeof(n), 0);
 }
 
 /* ---------- networking (plain HTTP over sceNet) ---------- */
+/* Local sockaddr_in layout (16 bytes), since the toolchain headers lack one */
+typedef struct {
+  uint8_t sin_len; uint8_t sin_family; uint16_t sin_port;
+  OrbisNetInAddr sin_addr; uint16_t sin_vport; char sin_zero[6];
+} SockAddrIn;
 static int net_pool = -1;
 
 static int net_start(void) {
@@ -54,7 +59,7 @@ static int http_connect(const char *host, int port) {
   }
   int s = sceNetSocket("dl", ORBIS_NET_AF_INET, ORBIS_NET_SOCK_STREAM, 0);
   if (s < 0) return -1;
-  OrbisNetSockaddrIn sa; memset(&sa, 0, sizeof(sa));
+  SockAddrIn sa; memset(&sa, 0, sizeof(sa));
   sa.sin_len = sizeof(sa); sa.sin_family = ORBIS_NET_AF_INET;
   sa.sin_port = sceNetHtons(port); sa.sin_addr = addr;
   if (sceNetConnect(s, (OrbisNetSockaddr *)&sa, sizeof(sa)) < 0) { sceNetSocketClose(s); return -1; }

@@ -1,0 +1,2 @@
+# Name|/path/to/file  (one per line)
+Test file|/files/test.pkg

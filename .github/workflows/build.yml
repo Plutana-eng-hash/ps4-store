@@ -55,6 +55,18 @@ jobs:
             echo "CLR_OPENSSL_VERSION_OVERRIDE=3" >> "$GITHUB_ENV"
           fi
 
+      - name: Host tests (feed parser)
+        run: ./tests/run_host_tests.sh
+
+      - name: Check toolchain has the libraries this app links
+        run: |
+          missing=0
+          for L in SceVideoOut SceHttp SceSsl SceNet ScePad SceUserService SceSystemService; do
+            if ! find "$OO_PS4_TOOLCHAIN/lib" -iname "lib$L*" | grep -q .; then echo "::error::toolchain has no lib$L stub"; missing=1; fi
+          done
+          if [ $missing = 1 ]; then echo "Available stubs:"; ls "$OO_PS4_TOOLCHAIN/lib" | grep -i '^libSce' ; exit 1; fi
+          echo "All required stubs present"
+
       - name: Build
         env:
           DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: "1"

@@ -3,7 +3,7 @@
 /* The game list the app reads. Can be overridden on the console without rebuilding by putting a
    URL on the first line of /data/ps4store/feed_url.txt */
 #ifndef FEED_URL
-#define FEED_URL "https://raw.githubusercontent.com/Plutana-eng-hash/ps4-store/refs/heads/main/Gms.json"
+#define FEED_URL "https://raw.githubusercontent.com/M3hmetSa1t/pegasus-ps4-collection-catalog/main/pegasus-ps4-catalog.json"
 #endif
 #ifndef FEED_OVERRIDE_FILE
 #define FEED_OVERRIDE_FILE "/data/ps4store/feed_url.txt"

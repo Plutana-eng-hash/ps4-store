@@ -1,0 +1,66 @@
+{
+  "name": "PLACEHOLDER_CATALOG_NAME",
+  "version": 1,
+  "packages": [
+    {
+      "titleId": "CUSAXXXXX",
+      "title": "PLACEHOLDER_TITLE_1",
+      "downloadLinks": [
+        {
+          "name": "PLACEHOLDER_REGION Base (vXX.XX) - Direct",
+          "url": "PLACEHOLDER_DOWNLOAD_URL"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "PLACEHOLDER_POSTER_URL",
+      "version": "XX.XX",
+      "description": "Region: PLACEHOLDER\nVersion: XX.XX\nMin FW: X.XX\nSize: X.XX GB",
+      "downloadSource": "PLACEHOLDER_DOWNLOAD_URL"
+    },
+    {
+      "titleId": "CUSAXXXXX",
+      "title": "PLACEHOLDER_TITLE_2",
+      "downloadLinks": [
+        {
+          "name": "PLACEHOLDER_REGION Base (vXX.XX) - Direct",
+          "url": "PLACEHOLDER_DOWNLOAD_URL"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "PLACEHOLDER_POSTER_URL",
+      "version": "XX.XX",
+      "description": "Region: PLACEHOLDER\nVersion: XX.XX\nMin FW: X.XX\nSize: X.XX GB",
+      "downloadSource": "PLACEHOLDER_DOWNLOAD_URL"
+    },
+    {
+      "titleId": "CUSAXXXXX",
+      "title": "PLACEHOLDER_TITLE_3",
+      "downloadLinks": [
+        {
+          "name": "PLACEHOLDER_REGION Base (vXX.XX) - Direct",
+          "url": "PLACEHOLDER_DOWNLOAD_URL"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "PLACEHOLDER_POSTER_URL",
+      "version": "XX.XX",
+      "description": "Region: PLACEHOLDER\nVersion: XX.XX\nMin FW: X.XX\nSize: X.XX GB",
+      "downloadSource": "PLACEHOLDER_DOWNLOAD_URL"
+    },
+    {
+      "titleId": "CUSAXXXXX",
+      "title": "PLACEHOLDER_TITLE_4",
+      "downloadLinks": [
+        {
+          "name": "PLACEHOLDER_REGION Base (vXX.XX) - Direct",
+          "url": "PLACEHOLDER_DOWNLOAD_URL"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "PLACEHOLDER_POSTER_URL",
+      "version": "XX.XX",
+      "description": "Region: PLACEHOLDER\nVersion: XX.XX\nMin FW: X.XX\nSize: X.XX GB",
+      "downloadSource": "PLACEHOLDER_DOWNLOAD_URL"
+    }
+  ]
+}

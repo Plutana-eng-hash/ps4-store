@@ -43,6 +43,18 @@ jobs:
           fi
           echo "=== tools in bin/linux ==="; ls "$TC/bin/linux"
 
+      - name: Make OpenSSL available for PkgTool (.NET)
+        run: |
+          # PkgTool.Core is an older .NET app that looks for libssl 1.1
+          cd /tmp
+          if wget -q http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb \
+             && sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb; then
+            echo "Installed libssl1.1"
+          else
+            echo "libssl1.1 install failed; telling .NET to use OpenSSL 3"
+            echo "CLR_OPENSSL_VERSION_OVERRIDE=3" >> "$GITHUB_ENV"
+          fi
+
       - name: Build
         env:
           DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: "1"
